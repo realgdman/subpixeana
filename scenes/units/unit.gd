@@ -38,7 +38,7 @@ func update_ai_dir():
 
 func on_hit(body):
 	var bullet = body.get_parent()
-	health = wrapi(health - bullet.damage, 0, 9999)
+	health = clamp(health - bullet.damage, 0, 9999)
 	if health == 0:
 		die()
 		

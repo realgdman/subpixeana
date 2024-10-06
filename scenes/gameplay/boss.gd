@@ -10,7 +10,7 @@ func _ready():
 	
 func on_hit(body):
 	var bullet = body.get_parent()
-	health = wrapi(health - bullet.damage, 0, 9999)
+	health = clamp(health - bullet.damage, 0, 9999)
 	$lifebar/LiineHP.points[1].x = health
 	if health == 0:
 		die()

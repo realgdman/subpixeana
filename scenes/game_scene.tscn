@@ -22,6 +22,10 @@ position = Vector2( 1058, 757 )
 
 [node name="Units" type="Node2D" parent="."]
 
+[node name="boss" parent="Units" instance=ExtResource( 3 )]
+unique_name_in_owner = true
+position = Vector2( 489, -36 )
+
 [node name="Bullets" type="Node2D" parent="."]
 
 [node name="Poofs" type="Node2D" parent="."]
@@ -54,6 +58,3 @@ position = Vector2( 3854, 2129 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4"]
 position = Vector2( -1919, 1186 )
 shape = SubResource( 1 )
-
-[node name="boss" parent="." instance=ExtResource( 3 )]
-position = Vector2( 489, -36 )

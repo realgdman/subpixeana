@@ -8,7 +8,7 @@ func _ready():
 	_e = $"%BtnFire".connect("pressed", $Viewport/game_scene/player, "on_fire_pressed")
 	_e = $"%BtnFire".connect("released", $Viewport/game_scene/player, "on_fire_released")
 	
-	$Viewport/game_scene/boss.connect("you_win", self, "on_win")
+	$Viewport/game_scene/Units/boss.connect("you_win", self, "on_win")
 	
 	set_rgb_mode(0)
 

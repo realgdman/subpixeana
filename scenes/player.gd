@@ -8,6 +8,8 @@ onready var bullet_tscn = load("res://scenes/gameplay/bullet.tscn")
 var speed = 50.0
 var dir = Vector2.ZERO
 
+var damage = 100.0
+
 func _physics_process(delta):
 	update_control_dir()
 	kbody.position += dir * delta * speed
@@ -36,6 +38,7 @@ func fire_bullet():
 	var bullet = bullet_tscn.instance()
 	bullet.position = kbody.global_position
 	bullet.dir = Vector2.UP
+	bullet.damage = damage
 	get_parent().attach_bullet(bullet)
 
 func on_fire_pressed():
