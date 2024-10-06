@@ -12,3 +12,6 @@ func create_units():
 	for _i in range(3000):
 		var unit = unit_tscn.instance()
 		$Units.add_child(unit)
+
+func attach_bullet(bullet):
+	$Bullets.add_child(bullet)
