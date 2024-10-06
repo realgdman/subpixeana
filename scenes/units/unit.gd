@@ -10,7 +10,7 @@ var target_pos = Vector2.ZERO
 
 func _ready():
 	set_random_target()
-	position = target_pos
+	kbody.position = target_pos
 	
 func set_random_target():
 	target_pos = Vector2(randi() % 1280*3, randi() % 720*3)
@@ -19,6 +19,7 @@ func _physics_process(delta):
 	update_ai_dir()
 	kbody.position += dir * delta * speed
 	sprite.position = kbody.position.floor()
+	$Sprite.flip_h = dir.x < 0.1
 	dir = Vector2.ZERO
 
 func update_ai_dir():
