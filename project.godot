@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="Subpixia_Work"
+config/name="Subpixeana_Work"
 run/main_scene="res://scenes/startup_scene.tscn"
 config/icon="res://icon.png"
 
