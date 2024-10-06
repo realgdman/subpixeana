@@ -1,49 +1,29 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/test_player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://util/subpixel/subpixel_canvas.material" type="Material" id=2]
 [ext_resource path="res://assets/test.png" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/bitmapfont.font" type="BitmapFont" id=4]
 
-[sub_resource type="ViewportTexture" id=1]
-viewport_path = NodePath("Viewport")
-
 [node name="game_scene" type="Node2D"]
 
-[node name="Viewport" type="Viewport" parent="."]
-size = Vector2( 3840, 2160 )
-usage = 0
-render_target_v_flip = true
-
-[node name="black_bg" type="ColorRect" parent="Viewport"]
+[node name="black_bg" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 3840.0
 margin_bottom = 2160.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="Test" type="Sprite" parent="Viewport"]
+[node name="Test" type="Sprite" parent="."]
 visible = false
 position = Vector2( 3, 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="test_player" parent="Viewport" instance=ExtResource( 1 )]
-position = Vector2( 3800, 20 )
+[node name="test_player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 20, 20 )
 
-[node name="Label" type="Label" parent="Viewport"]
+[node name="TestLabel" type="Label" parent="."]
 margin_right = 40.0
 margin_bottom = 14.0
 custom_fonts/font = ExtResource( 4 )
 text = "ABCDE"
-
-[node name="SubpixelCanvas" type="TextureRect" parent="."]
-material = ExtResource( 2 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 1280.0
-margin_bottom = 720.0
-rect_clip_content = true
-texture = SubResource( 1 )
-expand = true
-stretch_mode = 3
