@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="lifebar" type="Node2D"]
+
+[node name="LiineHP" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0, 640, 0 )
+width = 9.0
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="Border" type="Line2D" parent="."]
+points = PoolVector2Array( -8, -8, 648, -8, 648, 8, -8, 8, -8, -8 )
+width = 1.0
+default_color = Color( 1, 1, 1, 1 )

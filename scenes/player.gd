@@ -5,7 +5,7 @@ onready var sprite = $Sprite
 
 onready var bullet_tscn = load("res://scenes/gameplay/bullet.tscn")
 
-var speed = 10.0
+var speed = 50.0
 var dir = Vector2.ZERO
 
 func _physics_process(delta):

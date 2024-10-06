@@ -99,6 +99,17 @@ unique_name_in_owner = true
 position = Vector2( -24, -17 )
 normal = SubResource( 2 )
 
+[node name="YouWin" type="Label" parent="GUI"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -240.0
+margin_top = 3.0
+margin_right = -132.0
+margin_bottom = 25.0
+rect_scale = Vector2( 6, 6 )
+text = "YOU WIN"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="RootControl" type="Control" parent="CanvasLayer"]
@@ -132,7 +143,7 @@ text = "SUBPIXEANA"
 
 [node name="Title3" type="Label" parent="CanvasLayer/RootControl"]
 visible = false
-modulate = Color( 0.670588, 1, 0.670588, 1 )
+modulate = Color( 0.709804, 0.705882, 0.666667, 1 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -321.0

@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/game_scene.gd" type="Script" id=2]
+[ext_resource path="res://scenes/gameplay/boss.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2160, 1440 )
 
 [node name="game_scene" type="Node2D"]
 script = ExtResource( 2 )
@@ -21,3 +25,35 @@ position = Vector2( 1058, 757 )
 [node name="Bullets" type="Node2D" parent="."]
 
 [node name="Poofs" type="Node2D" parent="."]
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+position = Vector2( -1919, 1186 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Walls"]
+position = Vector2( 7668, -24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2"]
+position = Vector2( -1919, 1186 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
+position = Vector2( 3838, -2459 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3"]
+position = Vector2( -1919, 1186 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Walls"]
+position = Vector2( 3854, 2129 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4"]
+position = Vector2( -1919, 1186 )
+shape = SubResource( 1 )
+
+[node name="boss" parent="." instance=ExtResource( 3 )]
+position = Vector2( 489, -36 )

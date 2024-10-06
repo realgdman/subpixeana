@@ -8,6 +8,8 @@ func _ready():
 	_e = $"%BtnFire".connect("pressed", $Viewport/game_scene/player, "on_fire_pressed")
 	_e = $"%BtnFire".connect("released", $Viewport/game_scene/player, "on_fire_released")
 	
+	$Viewport/game_scene/boss.connect("you_win", self, "on_win")
+	
 	set_rgb_mode(0)
 
 var current_rgb_mode = 0
@@ -26,3 +28,6 @@ func on_rgb_mode_pressed():
 func set_rgb_mode(index):
 	($SubpixelCanvas.material as ShaderMaterial).shader = load(rgb_modes[index].shader)
 	$GUI/LblRbgMode.bbcode_text = rgb_modes[index].label
+	
+func on_win():
+	$GUI/YouWin.show()

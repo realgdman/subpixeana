@@ -36,8 +36,8 @@ func update_ai_dir():
 		set_random_target()
 	dir = (target_pos - kbody.position).normalized()
 
-func on_hit(kbody):
-	var bullet = kbody.get_parent()
+func on_hit(body):
+	var bullet = body.get_parent()
 	health = wrapi(health - bullet.damage, 0, 9999)
 	if health == 0:
 		die()
