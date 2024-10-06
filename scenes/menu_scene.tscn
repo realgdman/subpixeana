@@ -26,7 +26,7 @@ margin_bottom = -26.0
 rect_scale = Vector2( 3, 3 )
 text = " START "
 
-[node name="Label" type="Label" parent="CanvasLayer/RootControl"]
+[node name="Title" type="Label" parent="CanvasLayer/RootControl"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -321.0

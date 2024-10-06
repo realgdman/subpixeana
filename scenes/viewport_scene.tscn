@@ -80,3 +80,43 @@ III"
 unique_name_in_owner = true
 position = Vector2( -24, -17 )
 normal = SubResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RootControl" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+
+[node name="Title" type="Label" parent="CanvasLayer/RootControl"]
+modulate = Color( 1, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -324.0
+margin_top = 16.0
+margin_right = -216.0
+margin_bottom = 38.0
+rect_scale = Vector2( 6, 6 )
+text = "SUBPIXEANA"
+
+[node name="Title2" type="Label" parent="CanvasLayer/RootControl"]
+modulate = Color( 0, 0, 1, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -318.0
+margin_top = 16.0
+margin_right = -210.0
+margin_bottom = 38.0
+rect_scale = Vector2( 6, 6 )
+text = "SUBPIXEANA"
+
+[node name="Title3" type="Label" parent="CanvasLayer/RootControl"]
+modulate = Color( 0.670588, 1, 0.670588, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -321.0
+margin_top = 16.0
+margin_right = -213.0
+margin_bottom = 38.0
+rect_scale = Vector2( 6, 6 )
+text = "SUBPIXEANA"
