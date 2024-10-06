@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/gameplay/poof.png" type="Texture" id=1]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 36, 36 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="poof" type="Node2D"]
+
+[node name="Poof" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+centered = false
+
+[node name="DelayTimer" type="Timer" parent="."]
+process_mode = 0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="DelayTimer" to="." method="queue_free"]

@@ -1,9 +1,12 @@
 extends Node2D
 
 func _ready():
-	var _e = $"%VJoystick".connect("vjoy_move", $Viewport/game_scene/test_player, "on_vjoy_move")
+	var _e = $"%VJoystick".connect("vjoy_move", $Viewport/game_scene/player, "on_vjoy_move")
 
 	_e = $"%BtnRbgMode".connect("pressed", self, "on_rgb_mode_pressed")
+	
+	_e = $"%BtnFire".connect("pressed", $Viewport/game_scene/player, "on_fire_pressed")
+	_e = $"%BtnFire".connect("released", $Viewport/game_scene/player, "on_fire_released")
 	
 	set_rgb_mode(0)
 

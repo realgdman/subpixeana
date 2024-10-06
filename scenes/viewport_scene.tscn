@@ -16,6 +16,7 @@ colors = PoolColorArray( 0, 0, 0, 0, 1, 1, 1, 0 )
 gradient = SubResource( 3 )
 
 [node name="viewport_scene" type="Node2D"]
+position = Vector2( -1, 0 )
 script = ExtResource( 3 )
 
 [node name="Viewport" type="Viewport" parent="."]
@@ -77,6 +78,22 @@ text = "RGB
 III"
 
 [node name="BtnRbgMode" type="TouchScreenButton" parent="GUI/LblRbgMode"]
+unique_name_in_owner = true
+position = Vector2( -24, -17 )
+normal = SubResource( 2 )
+
+[node name="LblFire" type="Label" parent="GUI"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -89.0
+margin_top = -120.0
+margin_right = -57.0
+margin_bottom = -79.0
+text = "X"
+
+[node name="BtnFire" type="TouchScreenButton" parent="GUI/LblFire"]
 unique_name_in_owner = true
 position = Vector2( -24, -17 )
 normal = SubResource( 2 )

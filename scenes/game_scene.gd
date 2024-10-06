@@ -15,3 +15,10 @@ func create_units():
 
 func attach_bullet(bullet):
 	$Bullets.add_child(bullet)
+
+onready var poof_tscn = load("res://scenes/gameplay/poof.tscn")
+
+func spawn_poof(pos):
+	var poof = poof_tscn.instance()
+	poof.position = pos
+	$Poofs.add_child(poof)

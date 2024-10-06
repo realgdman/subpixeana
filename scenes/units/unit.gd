@@ -6,13 +6,19 @@ onready var sprite = $Sprite
 var speed = 10.0
 var dir = Vector2.ZERO
 
+var health = 3.0
+
 var target_pos = Vector2.ZERO
 
 func _ready():
 	$Sprite.frame = randi() % 3
 	
+	$hitbox.connect("area_entered", self, "on_hit")
+	$hitbox.set_team($hitbox.Team.ENEMY)
+	
 	set_random_target()
 	kbody.position = target_pos
+
 	
 func set_random_target():
 	target_pos = Vector2(randi() % 720*3, randi() % 480*3)
@@ -29,3 +35,14 @@ func update_ai_dir():
 	if kbody.position.distance_squared_to(target_pos) < 4.0:
 		set_random_target()
 	dir = (target_pos - kbody.position).normalized()
+
+func on_hit(bullet):
+	print("!")
+	health = wrapi(health - bullet.damage, 0, 9999)
+	if health == 0:
+		die()
+		
+func die():
+	print("die'")
+	get_parent().get_parent().spawn_poof(position) #Game/Units
+	queue_free()
