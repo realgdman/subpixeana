@@ -2,19 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pixelfont.png-15ff0c46fbeb76e9b91167143f5a6863.stex"
+path="res://.import/hare.png-48418d7d5124854b158fb2c4713e0dd6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fonts/pixelfont.png"
-dest_files=[ "res://.import/pixelfont.png-15ff0c46fbeb76e9b91167143f5a6863.stex" ]
+source_file="res://assets/hare.png"
+dest_files=[ "res://.import/hare.png-48418d7d5124854b158fb2c4713e0dd6.stex" ]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
