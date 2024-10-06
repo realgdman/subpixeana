@@ -23,4 +23,5 @@ func despawn():
 	
 func set_damage(value):
 	damage = value
-	$Bullet.scale = Vector2.ONE * damage / 100.0
+	if damage > 100:
+		$Bullet.scale = Vector2.ONE * 3
