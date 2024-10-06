@@ -9,6 +9,8 @@ var dir = Vector2.ZERO
 var target_pos = Vector2.ZERO
 
 func _ready():
+	$Sprite.frame = randi() % 3
+	
 	set_random_target()
 	kbody.position = target_pos
 	

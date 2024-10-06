@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hare.png-48418d7d5124854b158fb2c4713e0dd6.stex"
+path="res://.import/hare1.png-05e743b49b721d5985994ca8fd166577.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hare.png"
-dest_files=[ "res://.import/hare.png-48418d7d5124854b158fb2c4713e0dd6.stex" ]
+source_file="res://assets/hare1.png"
+dest_files=[ "res://.import/hare1.png-05e743b49b721d5985994ca8fd166577.stex" ]
 
 [params]
 

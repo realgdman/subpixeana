@@ -9,6 +9,6 @@ func start_game():
 
 func create_units():
 	var unit_tscn = load("res://scenes/units/unit.tscn")
-	for _i in range(2000):
+	for _i in range(3000):
 		var unit = unit_tscn.instance()
 		$Units.add_child(unit)
