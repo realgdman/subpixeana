@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/subpixart.png" type="Texture" id=1]
 [ext_resource path="res://scenes/player.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 24.0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24, 24 )
 
 [node name="test_player" type="Node2D"]
 script = ExtResource( 2 )
@@ -24,3 +27,11 @@ shape = SubResource( 1 )
 process_mode = 0
 wait_time = 0.2
 one_shot = true
+
+[node name="Pick" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pick"]
+position = Vector2( 23, 24 )
+shape = SubResource( 2 )

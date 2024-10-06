@@ -8,7 +8,10 @@ onready var bullet_tscn = load("res://scenes/gameplay/bullet.tscn")
 var speed = 50.0
 var dir = Vector2.ZERO
 
-var damage = 100.0
+var damage = 1
+
+func _ready():
+	$Pick.connect("body_entered", self, "pick")
 
 func _physics_process(delta):
 	update_control_dir()
@@ -51,3 +54,6 @@ func process_firing():
 	if $ShootTimer.time_left < 0.01:
 		fire_bullet()
 		$ShootTimer.start()
+		
+func pick(body):
+	damage += 1
