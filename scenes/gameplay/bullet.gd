@@ -20,3 +20,7 @@ func set_despawn_timer(value):
 
 func despawn():
 	queue_free()
+	
+func set_damage(value):
+	damage = value
+	$Bullet.scale = Vector2.ONE * damage / 100.0

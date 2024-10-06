@@ -17,8 +17,13 @@ func attach_bullet(bullet):
 	$Bullets.add_child(bullet)
 
 onready var poof_tscn = load("res://scenes/gameplay/poof.tscn")
+onready var powerup_tscn = load("res://scenes/powerup.tscn")
 
 func spawn_poof(pos):
 	var poof = poof_tscn.instance()
 	poof.position = pos
 	$Poofs.add_child(poof)
+	var pup = powerup_tscn.instance()
+	$Poofs.call_deferred("add_child",pup)
+	pup.call_deferred("set_position",pos)
+

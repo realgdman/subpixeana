@@ -41,6 +41,7 @@ func on_hit(body):
 	health = clamp(health - bullet.damage, 0, 9999)
 	if health == 0:
 		die()
+	bullet.despawn()
 		
 func die():
 	get_parent().get_parent().spawn_poof(position) #Game/Units

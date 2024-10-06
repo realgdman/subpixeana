@@ -11,7 +11,7 @@ var dir = Vector2.ZERO
 var damage = 1
 
 func _ready():
-	$Pick.connect("body_entered", self, "pick")
+	$KinematicBody2D/Pick.connect("body_entered", self, "pick")
 
 func _physics_process(delta):
 	update_control_dir()
@@ -41,7 +41,7 @@ func fire_bullet():
 	var bullet = bullet_tscn.instance()
 	bullet.position = kbody.global_position
 	bullet.dir = Vector2.UP
-	bullet.damage = damage
+	bullet.set_damage(damage)
 	get_parent().attach_bullet(bullet)
 
 func on_fire_pressed():
@@ -57,3 +57,4 @@ func process_firing():
 		
 func pick(body):
 	damage += 1
+	body.get_parent().queue_free()

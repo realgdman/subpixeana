@@ -14,6 +14,7 @@ func on_hit(body):
 	$lifebar/LiineHP.points[1].x = health
 	if health == 0:
 		die()
+	bullet.despawn()
 		
 func die():
 	for i in 100:
