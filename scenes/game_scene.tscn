@@ -22,11 +22,13 @@ margin_bottom = 2160.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Test" type="Sprite" parent="Viewport"]
+visible = false
 position = Vector2( 3, 2 )
 texture = ExtResource( 3 )
 centered = false
 
 [node name="test_player" parent="Viewport" instance=ExtResource( 1 )]
+position = Vector2( 21, 20 )
 
 [node name="SubpixelCanvas" type="TextureRect" parent="."]
 material = ExtResource( 2 )

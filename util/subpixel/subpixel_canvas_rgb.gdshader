@@ -1,9 +1,9 @@
 shader_type canvas_item;
 
-const float dx1 = 1.0/1280.0;
-const float dx2 = dx1 * 2.0;
-const float dy1 = 1.0/720.0;
-const float dy2 = dy1 * 2.0;
+const float dx1 = 1.0/1024.0/3.0;
+const float dx2 = 2.0/1024.0/3.0;
+const float dy1 = 1.0/720.0/3.0;
+const float dy2 = 2.0/720.0/3.0;
 
 
 void fragment() {
