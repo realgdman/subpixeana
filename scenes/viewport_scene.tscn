@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/game_scene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://util/VJoystick.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/viewport_scene.gd" type="Script" id=3]
 [ext_resource path="res://util/subpixel/subpixel_canvas.material" type="Material" id=4]
 [ext_resource path="res://assets/fonts/default.theme" type="Theme" id=5]
+[ext_resource path="res://audio/music.ogg" type="AudioStream" id=6]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("Viewport")
@@ -140,3 +141,10 @@ margin_right = -213.0
 margin_bottom = 38.0
 rect_scale = Vector2( 6, 6 )
 text = "SUBPIXEANA"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = 20.0
+pitch_scale = 1.1
+autoplay = true
+bus = "Music"
