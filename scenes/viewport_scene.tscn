@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/game_scene.tscn" type="PackedScene" id=1]
+[ext_resource path="res://util/VJoystick.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/viewport_scene.gd" type="Script" id=3]
 [ext_resource path="res://util/subpixel/subpixel_canvas.material" type="Material" id=4]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("Viewport")
 
 [node name="viewport_scene" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 3840, 2160 )
@@ -25,3 +28,17 @@ rect_clip_content = true
 texture = SubResource( 1 )
 expand = true
 stretch_mode = 3
+
+[node name="GUI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1280.0
+margin_bottom = 720.0
+mouse_filter = 2
+
+[node name="VJoystick" parent="GUI" instance=ExtResource( 2 )]
+unique_name_in_owner = true
+anchor_left = 0.05
+anchor_top = 0.8
+anchor_right = 0.05
+anchor_bottom = 0.8
