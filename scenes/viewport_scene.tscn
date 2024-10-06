@@ -1,12 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/game_scene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://util/VJoystick.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/viewport_scene.gd" type="Script" id=3]
 [ext_resource path="res://util/subpixel/subpixel_canvas.material" type="Material" id=4]
+[ext_resource path="res://assets/fonts/default.theme" type="Theme" id=5]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("Viewport")
+
+[sub_resource type="Gradient" id=3]
+colors = PoolColorArray( 0, 0, 0, 0, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture2D" id=2]
+gradient = SubResource( 3 )
 
 [node name="viewport_scene" type="Node2D"]
 script = ExtResource( 3 )
@@ -33,24 +40,43 @@ stretch_mode = 3
 [node name="BorderL" type="ColorRect" parent="."]
 margin_right = 56.0
 margin_bottom = 480.0
-color = Color( 0.247059, 0.247059, 0.247059, 1 )
+color = Color( 0, 0, 0, 1 )
 
 [node name="BorderR" type="ColorRect" parent="."]
 margin_left = 664.0
 margin_right = 720.0
 margin_bottom = 480.0
-color = Color( 0.247059, 0.247059, 0.247059, 1 )
+color = Color( 0, 0, 0, 1 )
 
 [node name="GUI" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 1280.0
-margin_bottom = 720.0
+margin_right = 720.0
+margin_bottom = 480.0
 mouse_filter = 2
+theme = ExtResource( 5 )
 
 [node name="VJoystick" parent="GUI" instance=ExtResource( 2 )]
 unique_name_in_owner = true
-anchor_left = 0.05
-anchor_top = 0.8
-anchor_right = 0.05
-anchor_bottom = 0.8
+anchor_left = 0.1
+anchor_top = 0.7
+anchor_right = 0.1
+anchor_bottom = 0.7
+
+[node name="LblRbgMode" type="RichTextLabel" parent="GUI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -34.0
+margin_top = 3.0
+margin_right = -2.0
+margin_bottom = 44.0
+bbcode_enabled = true
+bbcode_text = "RGB
+[color=red]I[/color][color=green]I[/color][color=blue]I[/color]"
+text = "RGB
+III"
+
+[node name="BtnRbgMode" type="TouchScreenButton" parent="GUI/LblRbgMode"]
+unique_name_in_owner = true
+position = Vector2( -24, -17 )
+normal = SubResource( 2 )
