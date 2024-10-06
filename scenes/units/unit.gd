@@ -15,7 +15,7 @@ func _ready():
 	kbody.position = target_pos
 	
 func set_random_target():
-	target_pos = Vector2(randi() % 1280*3, randi() % 720*3)
+	target_pos = Vector2(randi() % 720*3, randi() % 480*3)
 
 func _physics_process(delta):
 	update_ai_dir()
