@@ -89,6 +89,7 @@ anchor_bottom = 1.0
 theme = ExtResource( 5 )
 
 [node name="Title" type="Label" parent="CanvasLayer/RootControl"]
+visible = false
 modulate = Color( 1, 0, 0, 1 )
 anchor_left = 0.5
 anchor_right = 0.5
@@ -100,6 +101,7 @@ rect_scale = Vector2( 6, 6 )
 text = "SUBPIXEANA"
 
 [node name="Title2" type="Label" parent="CanvasLayer/RootControl"]
+visible = false
 modulate = Color( 0, 0, 1, 1 )
 anchor_left = 0.5
 anchor_right = 0.5
@@ -111,6 +113,7 @@ rect_scale = Vector2( 6, 6 )
 text = "SUBPIXEANA"
 
 [node name="Title3" type="Label" parent="CanvasLayer/RootControl"]
+visible = false
 modulate = Color( 0.670588, 1, 0.670588, 1 )
 anchor_left = 0.5
 anchor_right = 0.5
