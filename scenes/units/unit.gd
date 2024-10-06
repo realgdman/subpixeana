@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var kbody = $KinematicBody2D
+onready var kbody = self ### $KinematicBody2D
 onready var sprite = $Sprite
 
 var speed = 10.0
@@ -18,6 +18,7 @@ func set_random_target():
 func _physics_process(delta):
 	update_ai_dir()
 	kbody.position += dir * delta * speed
+	###kbody.move_and_collide(dir * speed)
 	sprite.position = kbody.position.floor()
 	$Sprite.flip_h = dir.x < 0.1
 	dir = Vector2.ZERO
